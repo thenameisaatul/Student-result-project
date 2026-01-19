@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result Management</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+        .box {
+            width: 400px;
+            background: white;
+            padding: 20px;
+            margin: 50px auto;
+            border-radius: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="box">
+    <h2>Student Result</h2>
+    <input type="text" id="name" placeholder="Student Name">
+    <input type="number" id="m1" placeholder="Subject 1 Marks">
+    <input type="number" id="m2" placeholder="Subject 2 Marks">
+    <input type="number" id="m3" placeholder="Subject 3 Marks">
+    <button onclick="result()">Calculate Result</button>
+    <p id="output"></p>
+</div>
+
+
+<script>
+    function result() {
+        var m1 = Number(document.getElementById("m1").value);
+        var m2 = Number(document.getElementById("m2").value);
+        var m3 = Number(document.getElementById("m3").value);
+
+
+        var total = m1 + m2 + m3;
+        var percent = total / 3;
+
+
+        document.getElementById("output").innerHTML =
+            "Total Marks: " + total + "<br>Percentage: " + percent.toFixed(2) + "%";
+    }
+</script>
+
+
+</body>
+</html>
+
